@@ -1,0 +1,12 @@
+<h2>Login</h2>
+<div>
+    <label for="username">Username </label>
+    <input type="text" name="username" id="username" #username>
+</div>
+<div>
+    <label for="password">Password </label>
+    <input type="password" name="password" id="password" #password>
+</div>
+<div>
+    <button (click)="onLogin({username: username.value, password: password.value})">Login</button>
+</div>

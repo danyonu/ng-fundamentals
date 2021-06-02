@@ -1,0 +1,12 @@
+<h2>Reactive driven form</h2>
+<form [formGroup]="myForm" (ngSubmit)="mySubmit()">
+    <label for="myName">Name: </label>
+    <input type="text" name="myName" placeholder="enter name" [formControl]="myForm.controls.myName">
+    <button>Get name</button>
+    <p>name: {{myForm.value.myName}}</p>
+    <p>name: {{myForm.controls.myName.valueChanges | async}}</p>
+    <div class="error" *ngIf="!myForm.valid && myForm.touched">Form not valid!</div>
+    <div class="error" *ngIf="myName.hasError('required')">Name is required!</div>
+    <div class="error" *ngIf="!myForm.controls.myName.valid">Name not valid!</div>
+    <div class="error" *ngIf="myName.hasError('capitalLetter')">Name must start with capital letter!</div>
+</form>

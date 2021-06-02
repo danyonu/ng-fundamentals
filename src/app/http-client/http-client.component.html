@@ -1,0 +1,5 @@
+<h2>HttpClient</h2>
+<button (click)="onGetUsers()">Get users</button>
+<button (click)="onSetUser()">Set user</button>
+<button (click)="onGetUser()">Get one user</button>
+<div *ngFor="let user of users">{{user.name}}</div>

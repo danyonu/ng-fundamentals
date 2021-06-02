@@ -1,0 +1,31 @@
+<h2>Template driven form</h2>
+<form #f="ngForm" (ngSubmit)="submit(f.value)">
+    <div>
+        <label for="myName">Name 1: </label>
+        <input type="text" name="myName" placeholder="enter name" ngModel>
+        <span> ngModel</span>
+    </div>
+    <div>
+        <label for="myName">Name 2: </label>
+        <input type="text" name="myName1" placeholder="enter name" ngModel="initial data">
+        <span> ngModel="initial data"</span>
+    </div>
+    <div>
+        <label for="myName">Name 3: </label>
+        <input type="text" name="myName2" placeholder="enter name" [(ngModel)]="theName">
+        <span> 2WDB [(ngModel)]="theName"</span>
+    </div>
+    <div>
+        <label for="myName">Name 4: </label>
+        <input type="text" name="myName3" placeholder="enter name" ngModel #myName3='ngModel'>
+        <span> #myName3='ngModel' - check if valid: {{myName3.valid}} and value: {{myName3.value}}</span>
+    </div>
+    <div>
+        <label for="myName">Name 5: </label>
+        <input type="text" name="myName4" placeholder="enter name" ngModel [ngModelOptions]="{standalone: true}">
+        <span> [ngModelOptions]="&#123;standalone: true&#125;": myName5 - {{f.value.myName5}}</span>
+    </div>
+    <button>Get name</button>
+    <p>from template variable(ngForm): {{f.value.myName}}</p>
+    <p>from inside of controller {{theName}}</p>
+</form>

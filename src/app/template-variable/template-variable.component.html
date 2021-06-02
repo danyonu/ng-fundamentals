@@ -1,0 +1,7 @@
+<h2>Template variable (#name)</h2>
+<p>Show Text: {{text}}</p>
+<br>
+<label for="dynamic">Enter text</label>
+<input type="text" name="dynamic" id="dynamic" #dynamicText>
+<br>
+<button (click)="onClick(dynamicText)">Show Text</button>
